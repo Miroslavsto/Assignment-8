@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P4"/>
+        <attribute name="authors" value="miros"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-08 11:57:44 PM"/>
+        <attribute name="created" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDg7MTE6NDM6NDIgUE07Mjg0Nw=="/>
+        <attribute name="edited" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDg7MTE6NTc6NDQgUE07MTsyOTYy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="itemName" type="String" array="False" size=""/>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <declare name="price" type="Integer" array="False" size=""/>
+            <declare name="extendedPrice" type="Integer" array="False" size=""/>
+            <declare name="totalSum" type="Integer" array="False" size=""/>
+            <declare name="orderCount" type="Integer" array="False" size=""/>
+            <declare name="averageOrder" type="Integer" array="False" size=""/>
+            <declare name="fileasfile" type="Boolean" array="False" size=""/>
+            <assign variable="totalSum" expression="0"/>
+            <assign variable="orderCount" expression="0"/>
+            <while expression="NOT endoffile">
+                <input variable="itemName"/>
+                <input variable="quantity"/>
+                <input variable="price"/>
+                <assign variable="extendedPrice" expression="quantity * price"/>
+                <assign variable="totalSum" expression="totalSum + extendedPrice"/>
+                <assign variable="orderCount" expression="orderCount + 1"/>
+                <output expression="itemName" newline="True"/>
+                <output expression="quantity" newline="True"/>
+                <output expression="price" newline="True"/>
+                <output expression="extendedPrice" newline="True"/>
+            </while>
+            <assign variable="averageOrder" expression="totalSum / orderCount"/>
+            <output expression="totalSum" newline="True"/>
+            <output expression="orderCount" newline="True"/>
+            <output expression="averageOrder" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

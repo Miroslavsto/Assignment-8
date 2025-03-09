@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P2"/>
+        <attribute name="authors" value="miros"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-08 11:32:34 PM"/>
+        <attribute name="created" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDg7MTE6MjY6MzMgUE07Mjg0OA=="/>
+        <attribute name="edited" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDg7MTE6MzI6MzQgUE07MTsyOTU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1" type="Integer" array="False" size=""/>
+            <declare name="num2" type="Integer" array="False" size=""/>
+            <declare name="nextNum" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="num1" expression="1"/>
+            <assign variable="num2" expression="1"/>
+            <output expression="num1" newline="True"/>
+            <output expression="num2" newline="True"/>
+            <for variable="i" start="3" end="20" direction="inc" step="1">
+                <assign variable="nextNum" expression="num1 + num2"/>
+                <output expression="nextNum" newline="True"/>
+                <assign variable="num1" expression="num2"/>
+                <assign variable="num2" expression="nextNum"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

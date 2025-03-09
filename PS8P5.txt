@@ -1,0 +1,22 @@
+
+IN_DISTRICT_COST = 250.00
+OUT_OF_DISTRICT_COST = 500.00
+
+total_tuition = 0.0
+student_count = 0
+
+        last_name, district_code, credits_taken = line.strip().split(",")
+        credits_taken = int(credits_taken)
+
+        if district_code == "I":
+            tuition_owed = credits_taken * IN_DISTRICT_COST
+        else:
+            tuition_owed = credits_taken * OUT_OF_DISTRICT_COST
+
+        print(f"{last_name} - Credits: {credits_taken} - Tuition Owed: ${tuition_owed:.2f}")
+
+        total_tuition += tuition_owed
+        student_count += 1
+
+print("\nTotal Tuition Owed: ${:.2f}".format(total_tuition))
+print("Total Number of Students: ", student_count)

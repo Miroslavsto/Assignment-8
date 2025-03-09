@@ -1,0 +1,25 @@
+
+    total_bonus = 0  # Variable to accumulate the total bonus paid out
+    
+    with open(filename, 'r') as file:
+        for line in file:
+            last_name, salary_str = line.strip().split(', ')
+            salary = float(salary_str)  # Convert salary to a float
+            
+            if salary >= 100000:
+                bonus_rate = 0.20  # 20% for salary 100,000 and up
+            elif salary >= 50000:
+                bonus_rate = 0.15  # 15% for salary 50,000 and up
+            else:
+                bonus_rate = 0.10  # 10% for all other salaries
+            
+            bonus = salary * bonus_rate
+            total_bonus += bonus  # Add to the total bonus
+            
+            print(f"{last_name}: Salary = ${salary:,.2f}, Bonus = ${bonus:,.2f}")
+    
+    print(f"\nTotal Bonuses Paid Out: ${total_bonus:,.2f}")
+
+filename = 'employee_data.txt'
+
+employee_data = '''Smith, 1

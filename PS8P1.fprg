@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P1"/>
+        <attribute name="authors" value="miros"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-05 01:42:14 PM"/>
+        <attribute name="created" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDU7MDE6MTg6MTkgUE07Mjg0OQ=="/>
+        <attribute name="edited" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDU7MDE6NDI6MTQgUE07MTsyOTQ5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="p" type="Real" array="False" size=""/>
+            <declare name="intamt" type="Real" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="endbal" type="Real" array="False" size=""/>
+            <declare name="totalint" type="Real" array="False" size=""/>
+            <declare name="year" type="Integer" array="False" size=""/>
+            <output expression="&quot;Do you want to calculate interest? (Yes or No)&quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response == &quot;Yes&quot;">
+                <output expression="&quot;Enter amount to invest&quot;" newline="True"/>
+                <input variable="p"/>
+                <output expression="&quot;Enter interest rate&quot;" newline="True"/>
+                <input variable="rate"/>
+                <assign variable="totalint" expression="0.0"/>
+                <output expression="&quot;Year&quot; &amp; &quot; Beg Bal&quot; &amp; &quot; End Bal&quot;" newline="True"/>
+                <for variable="year" start="1" end="5" direction="inc" step="1">
+                    <assign variable="intamt" expression="p * rate"/>
+                    <assign variable="endbal" expression="p + intamt"/>
+                    <output expression="year &amp; &quot;     &quot; &amp; p &amp; &quot;     &quot; &amp; endbal" newline="True"/>
+                    <assign variable="totalint" expression="totalint + intamt"/>
+                    <assign variable="p" expression="endbal"/>
+                </for>
+                <output expression="&quot;Total Interest Earned &quot; &amp; totalint" newline="True"/>
+                <output expression="&quot;Do another calculation (Yes or No)&quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

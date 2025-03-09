@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P3"/>
+        <attribute name="authors" value="miros"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-09 12:20:48 AM"/>
+        <attribute name="created" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDg7MTE6NTc6NDkgUE07Mjg1OQ=="/>
+        <attribute name="edited" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDk7MTI6MjA6NDggQU07MTsyOTQz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="lastName" type="String" array="False" size=""/>
+            <declare name="salary" type="Integer" array="False" size=""/>
+            <declare name="bonusRate" type="Integer" array="False" size=""/>
+            <declare name="bonus" type="Integer" array="False" size=""/>
+            <declare name="totalBonus" type="Integer" array="False" size=""/>
+            <declare name="file" type="Integer" array="False" size=""/>
+            <assign variable="totalBonus" expression="0"/>
+            <assign variable="lastName" expression="&quot;&quot;"/>
+            <while expression="lastName &lt;&gt;  &quot;&quot;">
+                <if expression="salary &gt;= 100000">
+                    <then>
+                        <assign variable="bonusRate" expression="0.20"/>
+                        <if expression="salary = 50000">
+                            <then>
+                                <assign variable="bonusRate" expression="0.15"/>
+                            </then>
+                            <else>
+                                <assign variable="bonusRate" expression="0.10"/>
+                            </else>
+                        </if>
+                        <assign variable="bonus" expression="salary * bonusRate"/>
+                        <assign variable="totalBonus" expression="totalBonus + bonus"/>
+                        <output expression="lastName" newline="True"/>
+                        <output expression="salary" newline="True"/>
+                        <output expression="bonus" newline="True"/>
+                        <input variable="lastName"/>
+                        <input variable="salary"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

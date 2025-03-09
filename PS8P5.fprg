@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PS8P5"/>
+        <attribute name="authors" value="miros"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-08 02:17:06 PM"/>
+        <attribute name="created" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDg7MDE6NTc6MjIgUE07Mjg0OQ=="/>
+        <attribute name="edited" value="bWlyb3M7TEFQVE9QLTZUNkI5NVM2OzIwMjUtMDMtMDg7MDI6MTc6MDYgUE07MTsyOTU2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <assign variable="totalTuition" expression="0"/>
+            <assign variable="studentCount" expression="0"/>
+            <while expression="not endoffile">
+                <declare name="studentLastName" type="Real" array="False" size=""/>
+                <declare name="tuition" type="Real" array="False" size=""/>
+                <declare name="I" type="Real" array="False" size=""/>
+                <declare name="districtCode" type="Real" array="False" size=""/>
+                <declare name="creditsTaken" type="Real" array="False" size=""/>
+                <if expression="districtCode == I">
+                    <then>
+                        <assign variable="tuition" expression="creditsTaken * 250.00"/>
+                        <output expression="studentLastName" newline="True"/>
+                        <output expression="creditsTaken" newline="True"/>
+                        <output expression="tuition" newline="True"/>
+                        <assign variable="totalTuition" expression="totalTuition + tuition"/>
+                        <assign variable="studentCount" expression="studentCount + 1"/>
+                    </then>
+                    <else>
+                        <assign variable="tuition" expression="creditsTaken * 500.00"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="totalTuition" newline="True"/>
+            <output expression="studentCount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
